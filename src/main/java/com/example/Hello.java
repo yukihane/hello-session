@@ -2,6 +2,7 @@ package com.example;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.net.InetAddress;
 import java.util.Date;
 
 import javax.servlet.ServletException;
@@ -41,9 +42,11 @@ public class Hello extends HttpServlet {
             Date prevDate = (Date) session.getAttribute("date");
 
             out.println("<p>");
-            out.println(visited);
-            out.println("times, ");
-            out.println("(previous date) " + prevDate.toString() + "</p?");
+            out.println("visit time(s): " + visited + ", ");
+            out.println("previous/current date: " + prevDate.toString() + " / " + new Date().toString() + ", ");
+            String addr = InetAddress.getLocalHost().getHostAddress();
+            out.println("IP addr: " + addr);
+            out.println("</p>");
 
             session.setAttribute("visited", Integer.toString(visited));
         }
