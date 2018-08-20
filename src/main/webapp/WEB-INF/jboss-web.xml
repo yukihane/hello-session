@@ -1,0 +1,6 @@
+<jboss-web>
+<!-- https://developer.jboss.org/thread/277751 -->
+<replication-config>  
+    <replication-granularity>ATTRIBUTE</replication-granularity>  
+</replication-config> 
+</jboss-web>
